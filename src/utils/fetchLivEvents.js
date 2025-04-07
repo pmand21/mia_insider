@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const fetchLivEvents = async () => {
   try {
-    const response = await axios.get('http://localhost:8000/api/liv-events');
+    const response = await axios.get('https://<https://mia-insider.onrender.com>/api/liv-events');
     const events = response.data._embedded?.events || [];
 
     return events.map(event => ({
