@@ -1,0 +1,27 @@
+[
+    {
+      "club": "LIV",
+      "date": "2025-04-05",
+      "title": "Travis Scott Live",
+      "startTime": "11:00 PM",
+      "djs": ["Travis Scott"],
+      "url": "https://livnightclub.com/events/travis-scott",
+      "tickets": [
+        { "label": "GA Before 10PM", "price": 40 },
+        { "label": "VIP", "price": 120 }
+      ]
+    },
+    {
+      "club": "Club Space",
+      "date": "2025-04-06",
+      "title": "Carl Cox",
+      "startTime": "2:00 AM",
+      "djs": ["Carl Cox"],
+      "url": "https://clubspace.com/carl-cox",
+      "tickets": [
+        { "label": "GA", "price": 60 },
+        { "label": "VIP", "price": 150 }
+      ]
+    }
+  ]
+  
