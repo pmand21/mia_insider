@@ -102,7 +102,7 @@ export default function Calendar() {
             {/* Logo */}
             <div className="p-4 border-b border-gray-200 flex flex-col items-center border-r">
               <img
-                src={`/src/assets/logos/${club.toLowerCase().replace(/\s/g, "")}_logo.jpg`}
+                src={`/logos/${club.toLowerCase().replace(/\s/g, "")}_logo.jpg`}
                 alt={`${club} logo`}
                 className="w-16 h-16 object-contain mb-2 rounded bg-white shadow"
                 onError={(e) => (e.target.style.display = "none")}

@@ -38,7 +38,7 @@ export default function CartPage() {
               {cartItems.map((item, idx) => (
                 <li key={idx} className="flex items-center gap-4">
                   <img
-                    src={`/src/assets/logos/${item.club.toLowerCase().replace(/\s/g, "")}_logo.jpg`}
+                    src={`/logos/${item.club.toLowerCase().replace(/\s/g, "")}_logo.jpg`}
                     alt={`${item.club} logo`}
                     className="size-16 rounded-sm object-contain bg-gray-100"
                     onError={(e) => (e.target.style.display = "none")}
