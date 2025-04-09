@@ -3,6 +3,12 @@ import events from "../data/events.json";
 import EventCard from "./EventCard";
 import { getWeeksForMonth } from "../utils/getWeeksForMonth";
 import { fetchLivEvents } from "../utils/fetchLivEvents";
+import { fetchSpaceEvents } from "../utils/fetchSpaceEvents";
+import { fetchE11Events } from "../utils/fetchE11Events";
+import { fetchFloydEvents } from "../utils/fetchFloydEvents";
+import { fetchM2Events } from "../utils/fetchM2Events";
+import { fetchFactoryTownEvents } from "../utils/fetchFactoryTownEvents";
+import { fetchDonotSitEvents } from "../utils/fetchDonotSitEvents";
 import { format, parseISO, isSameDay } from "date-fns";
 
 const months = Array.from({ length: 12 }, (_, i) => ({
@@ -25,6 +31,15 @@ export default function Calendar() {
   const [selectedMonthIndex, setSelectedMonthIndex] = useState(3);
   const [selectedWeekIndex, setSelectedWeekIndex] = useState(0);
   const [livEvents, setLivEvents] = useState([]);
+  const [spaceEvents, setSpaceEvents] = useState([]);
+  const [e11Events, setE11Events] = useState([]);
+  const [floydEvents, setFloydEvents] = useState([]);
+  const [m2Events, setM2Events] = useState([]);
+  const [factoryTownEvents, setFactoryTownEvents] = useState([]);
+  const [donotSitEvents, setDonotSitEvents] = useState([]);
+
+
+
 
   const selectedMonth = months.find((m) => m.index === selectedMonthIndex);
   const weeks = getWeeksForMonth(currentYear, selectedMonthIndex);
@@ -32,8 +47,22 @@ export default function Calendar() {
 
   useEffect(() => {
     const getEvents = async () => {
-      const events = await fetchLivEvents();
-      setLivEvents(events); // or however you're storing/rendering events
+      const [liv, space, e11, floyd, m2, factoryTown, donotSit] = await Promise.all([
+        fetchLivEvents(),
+        fetchSpaceEvents(),
+        fetchE11Events(),
+        fetchFloydEvents(),
+        fetchM2Events(),
+        fetchFactoryTownEvents(),
+        fetchDonotSitEvents()
+      ]);
+      setLivEvents(liv);
+      setSpaceEvents(space);
+      setE11Events(e11);
+      setFloydEvents(floyd);
+      setM2Events(m2);
+      setFactoryTownEvents(factoryTown);
+      setDonotSitEvents(donotSit);
     };
     getEvents();
   }, []);
@@ -112,11 +141,26 @@ export default function Calendar() {
 
             {/* Days */}
             {week.days.map((date) => {
-              const allEvents =
-              club === "LIV"
-                ? livEvents.filter((e) => isSameDay(parseISO(e.date), date))
-                : events.filter((e) => e.club === club && isSameDay(parseISO(e.date), date));
-            
+              let allEvents = [];
+
+              if (club === "LIV") {
+                allEvents = livEvents.filter((e) => isSameDay(parseISO(e.date), date));
+              } else if (club === "Club Space") {
+                allEvents = spaceEvents.filter((e) => isSameDay(parseISO(e.date), date));
+              } else if (club === "E11EVEN") {
+                allEvents = e11Events.filter((e) => isSameDay(parseISO(e.date), date));
+              } else if (club === "Floyd") {
+                allEvents = floydEvents.filter((e) => isSameDay(parseISO(e.date), date));
+              } else if (club === "M2") {
+                allEvents = m2Events.filter((e) => isSameDay(parseISO(e.date), date));
+              } else if (club === "Factory Town") {
+                allEvents = factoryTownEvents.filter((e) => isSameDay(parseISO(e.date), date));
+              } else if (club === "Do Not Sit on the Furniture") {
+                allEvents = donotSitEvents.filter((e) => isSameDay(parseISO(e.date), date));
+              } else {
+                allEvents = events.filter((e) => e.club === club && isSameDay(parseISO(e.date), date));
+              }
+              
 
               return (
                 <div

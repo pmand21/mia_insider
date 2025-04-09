@@ -1,22 +1,12 @@
-// fetchLivEvents.js
-import axios from 'axios';
+// src/utils/fetchLivEvents.js
 
 export const fetchLivEvents = async () => {
   try {
-    const response = await axios.get('https://<https://mia-insider.onrender.com>/api/liv-events');
-    const events = response.data._embedded?.events || [];
-
-    return events.map(event => ({
-      club: 'LIV',
-      title: event.name,
-      url: event.url,
-      date: event.dates.start.localDate,
-      startTime: event.dates.start.localTime,
-      djs: event._embedded?.attractions?.map(a => a.name) || [],
-      priceRanges: event.priceRanges || []
-    }));
+    const response = await fetch("http://localhost:8000/api/events?club=LIV");
+    if (!response.ok) throw new Error("Failed to fetch events");
+    return await response.json();
   } catch (error) {
-    console.error('Error fetching LIV events: ', error);
+    console.error("Error fetching LIV events:", error);
     return [];
   }
 };
