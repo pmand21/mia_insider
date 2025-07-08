@@ -1,0 +1,236 @@
+.vip-page {
+  min-height: 100vh;
+  padding-top: 100px;
+  background: #0a0a0a;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.vip-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.vip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-card {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ff6b35;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card li {
+  color: #cccccc;
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.info-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #ff6b35;
+  font-weight: bold;
+}
+
+.package {
+  background: rgba(255, 107, 53, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.package h4 {
+  color: #ff6b35;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.package p {
+  color: #cccccc;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.price {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.vip-form-container {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: fit-content;
+}
+
+.vip-form h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #ff6b35;
+  text-align: center;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.submit-message.success {
+  background: rgba(34, 197, 94, 0.2);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.submit-message.error {
+  background: rgba(239, 68, 68, 0.2);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+@media (max-width: 768px) {
+  .vip-page {
+    padding-top: 80px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .vip-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .info-card,
+  .vip-form-container {
+    margin: 0 1rem;
+  }
+}

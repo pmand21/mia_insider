@@ -11,6 +11,7 @@ import HotelsPage from './pages/HotelsPage';
 import ExperiencesPage from './pages/ExperiencesPage';
 import GuidesPage from './pages/GuidesPage';
 import ClubCalendarPage from './pages/ClubCalendarPage';
+import VipPage from './pages/VipPage';
 import './App.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/experiences" element={<ExperiencesPage />} />
         <Route path="/guides" element={<GuidesPage />} />
         <Route path="/club-calendar" element={<ClubCalendarPage />} />
+        <Route path="/vip" element={<VipPage />} />
       </Routes>
       <Footer />
     </div>
