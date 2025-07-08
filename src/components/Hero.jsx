@@ -27,14 +27,6 @@ const Hero = () => {
             <Link to="/calendar" className="btn btn-primary">MIA Calendar</Link>
             <a href="#clubs" className="btn btn-secondary">Club Calendar</a>
           </div>
-          
-          <div className="hero-tags fade-in-up">
-            <span className="tag">Clubs</span>
-            <span className="tag">Events</span>
-            <span className="tag">Dining</span>
-            <span className="tag">Hotels</span>
-            <span className="tag">VIP</span>
-          </div>
         </div>
       </div>
     </section>
