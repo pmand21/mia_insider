@@ -1,0 +1,185 @@
+.club-calendar-page {
+  min-height: 100vh;
+  padding-top: 100px;
+  background: #0a0a0a;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.clubs-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.clubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.club-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.club-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 107, 53, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.club-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.club-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.club-card:hover .club-image img {
+  transform: scale(1.05);
+}
+
+.club-rating {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 107, 53, 0.9);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.club-content {
+  padding: 1.5rem;
+}
+
+.club-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.club-location {
+  color: #ff6b35;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.club-description {
+  color: #cccccc;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.club-details {
+  margin-bottom: 1rem;
+}
+
+.club-capacity,
+.club-dress-code {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.detail-label {
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+.detail-value {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.club-genres {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.genre-tag {
+  background: rgba(255, 107, 53, 0.2);
+  color: #ff6b35;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.loading-message,
+.error-message {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+.loading-message {
+  color: #cccccc;
+}
+
+.error-message {
+  color: #ff6b35;
+}
+
+@media (max-width: 768px) {
+  .club-calendar-page {
+    padding-top: 80px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .clubs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .club-card {
+    margin: 0 1rem;
+  }
+}

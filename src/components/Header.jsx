@@ -25,12 +25,12 @@ const Header = () => {
           </Link>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-            <a href="#clubs">Clubbing</a>
-            <a href="#events">Events</a>
-            <a href="#dining">Dining</a>
-            <a href="#hotels">Hotels</a>
-            <a href="#experiences">Experiences</a>
-            <a href="#guides">Guides</a>
+            <Link to="/clubbing">Clubbing</Link>
+            <Link to="/events">Events</Link>
+            <Link to="/dining">Dining</Link>
+            <Link to="/hotels">Hotels</Link>
+            <Link to="/experiences">Experiences</Link>
+            <Link to="/guides">Guides</Link>
           </nav>
           
           <div className="header-actions">

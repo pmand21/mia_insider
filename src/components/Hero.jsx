@@ -25,7 +25,7 @@ const Hero = () => {
           
           <div className="hero-buttons fade-in-up">
             <Link to="/calendar" className="btn btn-primary">MIA Calendar</Link>
-            <a href="#clubs" className="btn btn-secondary">Club Calendar</a>
+            <Link to="/club-calendar" className="btn btn-secondary">Club Calendar</Link>
           </div>
         </div>
       </div>
