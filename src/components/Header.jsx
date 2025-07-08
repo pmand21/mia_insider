@@ -30,8 +30,8 @@ const Header = () => {
             <Link to="/dining">Dining</Link>
             <Link to="/hotels">Hotels</Link>
             <Link to="/experiences">Experiences</Link>
-            <Link to="/vip" className="vip-button">VIP</Link>
             <Link to="/guides">Guides</Link>
+            <Link to="/vip" className="vip-button">VIP</Link>
           </nav>
           
           <div className="header-actions">

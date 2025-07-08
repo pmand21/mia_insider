@@ -9,7 +9,10 @@ const VipPage = () => {
     phone: '',
     company: '',
     eventType: '',
-    eventDate: '',
+    dateType: 'single',
+    singleDate: '',
+    startDate: '',
+    endDate: '',
     groupSize: '',
     budget: '',
     preferences: '',
@@ -43,7 +46,10 @@ const VipPage = () => {
         phone: '',
         company: '',
         eventType: '',
-        eventDate: '',
+        dateType: 'single',
+        singleDate: '',
+        startDate: '',
+        endDate: '',
         groupSize: '',
         budget: '',
         preferences: '',
@@ -74,31 +80,11 @@ const VipPage = () => {
                 <li>Premium table reservations at top venues</li>
                 <li>Skip-the-line access to exclusive clubs</li>
                 <li>Private yacht charters and parties</li>
-                <li>Celebrity meet & greets</li>
                 <li>Luxury transportation services</li>
                 <li>Personal concierge assistance</li>
                 <li>Custom event planning</li>
                 <li>Access to private events</li>
               </ul>
-            </div>
-
-            <div className="info-card">
-              <h3>VIP Packages</h3>
-              <div className="package">
-                <h4>Essential VIP</h4>
-                <p>Table service, priority entry, dedicated host</p>
-                <span className="price">Starting at $500</span>
-              </div>
-              <div className="package">
-                <h4>Premium VIP</h4>
-                <p>Everything in Essential + transportation, premium bottles</p>
-                <span className="price">Starting at $1,500</span>
-              </div>
-              <div className="package">
-                <h4>Ultimate VIP</h4>
-                <p>Full concierge service, private events, yacht access</p>
-                <span className="price">Starting at $5,000</span>
-              </div>
             </div>
           </div>
 
@@ -188,17 +174,58 @@ const VipPage = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="eventDate">Preferred Date *</label>
+                  <label htmlFor="dateType">Date Type *</label>
+                  <select
+                    id="dateType"
+                    name="dateType"
+                    value={formData.dateType}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="single">Single Day</option>
+                    <option value="range">Date Range</option>
+                  </select>
+                </div>
+              </div>
+
+              {formData.dateType === 'single' ? (
+                <div className="form-group">
+                  <label htmlFor="singleDate">Preferred Date(s) *</label>
                   <input
                     type="date"
-                    id="eventDate"
-                    name="eventDate"
-                    value={formData.eventDate}
+                    id="singleDate"
+                    name="singleDate"
+                    value={formData.singleDate}
                     onChange={handleChange}
                     required
                   />
                 </div>
-              </div>
+              ) : (
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="startDate">Start Date *</label>
+                    <input
+                      type="date"
+                      id="startDate"
+                      name="startDate"
+                      value={formData.startDate}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="endDate">End Date *</label>
+                    <input
+                      type="date"
+                      id="endDate"
+                      name="endDate"
+                      value={formData.endDate}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+              )}
 
               <div className="form-row">
                 <div className="form-group">
@@ -232,7 +259,8 @@ const VipPage = () => {
                     <option value="1000-2500">$1,000 - $2,500</option>
                     <option value="2500-5000">$2,500 - $5,000</option>
                     <option value="5000-10000">$5,000 - $10,000</option>
-                    <option value="10000+">$10,000+</option>
+                    <option value="10000-25000">$10,000 - $25,000</option>
+                    <option value="25000+">$25,000+</option>
                   </select>
                 </div>
               </div>

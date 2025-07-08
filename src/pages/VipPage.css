@@ -29,7 +29,7 @@
 
 .vip-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   gap: 4rem;
   margin-bottom: 4rem;
 }
@@ -72,33 +72,6 @@
   left: 0;
   color: #ff6b35;
   font-weight: bold;
-}
-
-.package {
-  background: rgba(255, 107, 53, 0.1);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  border: 1px solid rgba(255, 107, 53, 0.2);
-}
-
-.package h4 {
-  color: #ff6b35;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.package p {
-  color: #cccccc;
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
-}
-
-.price {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.1rem;
 }
 
 .vip-form-container {
