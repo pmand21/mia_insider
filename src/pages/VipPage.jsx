@@ -273,7 +273,7 @@ const VipPage = () => {
                   name="preferences"
                   value={formData.preferences}
                   onChange={handleChange}
-                  placeholder="Tell us about your preferred venues, music style, atmosphere, etc."
+                  placeholder="Tell us about your preferred venues, music style, atmosphere, cuisine, etc."
                   rows="3"
                 />
               </div>
