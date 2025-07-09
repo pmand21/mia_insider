@@ -83,6 +83,7 @@ const VipPage = () => {
                 <li>Luxury transportation services</li>
                 <li>Personal concierge assistance</li>
                 <li>Custom event planning</li>
+                <li>Restaurant reservations</li>
                 <li>Access to private events</li>
               </ul>
             </div>
