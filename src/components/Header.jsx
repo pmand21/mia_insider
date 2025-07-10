@@ -116,6 +116,7 @@ const Header = () => {
               </div>
             </div>
             <Link to="/dining">Dining</Link>
+            <Link to="/events">Events</Link>
             <Link to="/hotels">Hotels</Link>
             <Link to="/experiences">Experiences</Link>
             <Link to="/guides">Guides</Link>
