@@ -50,7 +50,7 @@ const Header = () => {
                 <div className="dropdown-section">
                   <Link to="/club-guide" className="dropdown-item">
                     <span className="dropdown-icon">🎯</span>
-                    Club Guide
+                    Night Club Guide
                   </Link>
                   <Link to="/club-calendar" className="dropdown-item">
                     <span className="dropdown-icon">📅</span>
