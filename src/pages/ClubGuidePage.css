@@ -30,20 +30,9 @@
   margin-bottom: 4rem;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-align: center;
-  background: linear-gradient(135deg, #ff6b35, #f7931e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .clubs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
@@ -63,7 +52,7 @@
 
 .club-image {
   position: relative;
-  height: 180px;
+  height: 160px;
   overflow: hidden;
 }
 
@@ -91,37 +80,60 @@
 }
 
 .club-content {
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
-.club-content h3 {
-  font-size: 1.2rem;
+.club-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.club-info {
+  flex: 1;
+}
+
+.club-info h3 {
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   color: #ffffff;
+  line-height: 1.3;
 }
 
 .club-location {
   color: #ff6b35;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 .club-genres {
   display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-end;
+  flex-shrink: 0;
 }
 
 .genre-tag {
   background: rgba(255, 107, 53, 0.2);
   color: #ff6b35;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
   font-weight: 500;
   border: 1px solid rgba(255, 107, 53, 0.3);
+  white-space: nowrap;
+}
+
+.club-description {
+  color: #cccccc;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
@@ -135,9 +147,21 @@
   
   .clubs-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .club-card {
     margin: 0 1rem;
+  }
+  
+  .club-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .club-genres {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 }
