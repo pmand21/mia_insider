@@ -56,6 +56,17 @@
   letter-spacing: 0.5px;
 }
 
+.vip-stat-link {
+  text-decoration: none;
+  color: #ff6b35;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.vip-stat-link:hover {
+  opacity: 0.7;
+}
+
 .quick-nav {
   margin-bottom: 4rem;
 }

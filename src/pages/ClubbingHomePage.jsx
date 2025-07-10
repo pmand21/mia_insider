@@ -59,7 +59,7 @@ const ClubbingHomePage = () => {
                 <span className="stat-label">Weekly Events</span>
               </div>
               <div className="stat">
-                <span className="stat-number">VIP</span>
+                <Link to="/vip" className="stat-number vip-stat-link">VIP</Link>
                 <span className="stat-label">Access Guaranteed</span>
               </div>
             </div>
