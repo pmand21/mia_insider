@@ -12,6 +12,12 @@ import ExperiencesPage from './pages/ExperiencesPage';
 import GuidesPage from './pages/GuidesPage';
 import ClubCalendarPage from './pages/ClubCalendarPage';
 import VipPage from './pages/VipPage';
+import ClubbingHomePage from './pages/ClubbingHomePage';
+import ClubsMapPage from './pages/ClubsMapPage';
+import ClubGuidePage from './pages/ClubGuidePage';
+import LoungeGuidePage from './pages/LoungeGuidePage';
+import DayBeachClubGuidePage from './pages/DayBeachClubGuidePage';
+import CocktailMusicBarsPage from './pages/CocktailMusicBarsPage';
 import './App.css';
 
 function App() {
@@ -29,6 +35,12 @@ function App() {
         <Route path="/guides" element={<GuidesPage />} />
         <Route path="/club-calendar" element={<ClubCalendarPage />} />
         <Route path="/vip" element={<VipPage />} />
+        <Route path="/clubbing-home" element={<ClubbingHomePage />} />
+        <Route path="/clubs-map" element={<ClubsMapPage />} />
+        <Route path="/club-guide" element={<ClubGuidePage />} />
+        <Route path="/lounge-guide" element={<LoungeGuidePage />} />
+        <Route path="/day-beach-club-guide" element={<DayBeachClubGuidePage />} />
+        <Route path="/cocktail-music-bars" element={<CocktailMusicBarsPage />} />
       </Routes>
       <Footer />
     </div>
