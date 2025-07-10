@@ -11,7 +11,7 @@ const ClubGuidePage = () => {
       image: 'https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
       rating: '4.9',
       genres: ['Electronic', 'Hip-Hop'],
-      description: '24/7 ultraclub with world-class entertainment and celebrity performances.'
+      description: '24/7 ultraclub with world-class entertainment and celebrity performances. Features multiple levels, VIP experiences, and some of the biggest names in electronic music.'
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const ClubGuidePage = () => {
       image: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
       rating: '4.5',
       genres: ['House', 'Techno'],
-      description: 'Legendary club known for marathon DJ sets and underground vibes.'
+      description: 'Legendary club known for marathon DJ sets and underground vibes. A true temple of electronic music where sets can go until sunrise and beyond.'
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const ClubGuidePage = () => {
       image: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
       rating: '4.8',
       genres: ['Electronic', 'Pop'],
-      description: 'World-renowned nightclub with A-list DJs and celebrity sightings.'
+      description: 'World-renowned nightclub with A-list DJs and celebrity sightings. The epitome of Miami glamour with stunning production and exclusive VIP experiences.'
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ const ClubGuidePage = () => {
       image: 'https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
       rating: '4.6',
       genres: ['House', 'Electronic'],
-      description: 'Upscale venue featuring top international DJs and sophisticated crowd.'
+      description: 'Upscale venue featuring top international DJs and sophisticated crowd. Known for its sleek design and premium sound system that delivers crystal-clear audio.'
     },
     {
       id: 5,
@@ -47,7 +47,7 @@ const ClubGuidePage = () => {
       image: 'https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
       rating: '4.4',
       genres: ['Deep House', 'Techno'],
-      description: 'Intimate underground venue with cutting-edge sound system.'
+      description: 'Intimate underground venue with cutting-edge sound system. A hidden gem for true music lovers seeking authentic deep house and techno experiences.'
     },
     {
       id: 6,
@@ -56,7 +56,7 @@ const ClubGuidePage = () => {
       image: 'https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
       rating: '4.3',
       genres: ['Industrial', 'Techno'],
-      description: 'Raw warehouse space hosting underground electronic music events.'
+      description: 'Raw warehouse space hosting underground electronic music events. Industrial atmosphere meets cutting-edge techno in this authentic Wynwood venue.'
     },
     {
       id: 7,
@@ -65,7 +65,7 @@ const ClubGuidePage = () => {
       image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
       rating: '4.5',
       genres: ['House', 'Progressive'],
-      description: 'Trendy spot known for progressive house and stylish atmosphere.'
+      description: 'Trendy spot known for progressive house and stylish atmosphere. Features innovative lighting design and attracts a fashion-forward crowd.'
     },
     {
       id: 8,
@@ -74,7 +74,7 @@ const ClubGuidePage = () => {
       image: 'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
       rating: '4.2',
       genres: ['Hip-Hop', 'R&B'],
-      description: 'Hip-hop focused venue with unique decor and urban atmosphere.'
+      description: 'Hip-hop focused venue with unique decor and urban atmosphere. Known for its eclectic furniture and vibrant street art-inspired interior design.'
     },
     {
       id: 9,
@@ -83,7 +83,7 @@ const ClubGuidePage = () => {
       image: 'https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop',
       rating: '4.4',
       genres: ['Lounge', 'Deep House'],
-      description: 'Sophisticated lounge with upscale crowd and premium bottle service.'
+      description: 'Sophisticated lounge with upscale crowd and premium bottle service. Elegant mint-green interior creates an exclusive atmosphere for Miami\'s elite.'
     }
   ];
 
