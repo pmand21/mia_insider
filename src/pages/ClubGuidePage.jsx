@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClubbingPage } from './ClubbingPage';
+import ClubbingPage from './ClubbingPage';
 
 // Redirect Club Guide to the existing Clubbing page content
 const ClubGuidePage = () => {
