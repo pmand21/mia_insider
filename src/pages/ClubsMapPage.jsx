@@ -1,32 +1,68 @@
 import React, { useState } from 'react';
+import { ChevronRight, ChevronDown } from 'lucide-react';
 import './ClubsMapPage.css';
 
 const ClubsMapPage = () => {
   const [selectedTypes, setSelectedTypes] = useState({
-    clubs: true,
-    lounges: false
+    clubs: false,
+    lounges: false,
+    bars: false
   });
   
   const [clubTypes, setClubTypes] = useState({
-    dayClub: false,
-    nightClub: true,
-    beachClub: false
+    nightClub: false,
+    dayBeachClub: false
   });
-  
-  const [showBars, setShowBars] = useState(false);
+
+  const [isClubsExpanded, setIsClubsExpanded] = useState(false);
 
   const handleTypeChange = (type) => {
-    setSelectedTypes(prev => ({
-      ...prev,
-      [type]: !prev[type]
-    }));
+    if (type === 'clubs') {
+      const newClubsState = !selectedTypes.clubs;
+      setSelectedTypes(prev => ({
+        ...prev,
+        clubs: newClubsState
+      }));
+      
+      // If checking clubs, check all sub-options
+      if (newClubsState) {
+        setClubTypes({
+          nightClub: true,
+          dayBeachClub: true
+        });
+        setIsClubsExpanded(true);
+      } else {
+        // If unchecking clubs, uncheck all sub-options
+        setClubTypes({
+          nightClub: false,
+          dayBeachClub: false
+        });
+      }
+    } else {
+      setSelectedTypes(prev => ({
+        ...prev,
+        [type]: !prev[type]
+      }));
+    }
   };
 
   const handleClubTypeChange = (type) => {
-    setClubTypes(prev => ({
+    const newClubTypes = {
+      ...clubTypes,
+      [type]: !clubTypes[type]
+    };
+    setClubTypes(newClubTypes);
+    
+    // If any sub-option is checked, check the main clubs option
+    const anyClubTypeChecked = Object.values(newClubTypes).some(value => value);
+    setSelectedTypes(prev => ({
       ...prev,
-      [type]: !prev[type]
+      clubs: anyClubTypeChecked
     }));
+  };
+
+  const toggleClubsExpansion = () => {
+    setIsClubsExpanded(!isClubsExpanded);
   };
 
   return (
@@ -44,15 +80,48 @@ const ClubsMapPage = () => {
             <div className="filter-section">
               <h3>Venue Types</h3>
               <div className="checkbox-group">
-                <label className="checkbox-item">
-                  <input
-                    type="checkbox"
-                    checked={selectedTypes.clubs}
-                    onChange={() => handleTypeChange('clubs')}
-                  />
-                  <span className="checkmark"></span>
-                  Clubs
-                </label>
+                <div className="checkbox-item-container">
+                  <label className="checkbox-item">
+                    <input
+                      type="checkbox"
+                      checked={selectedTypes.clubs}
+                      onChange={() => handleTypeChange('clubs')}
+                    />
+                    <span className="checkmark"></span>
+                    Clubs
+                  </label>
+                  <button 
+                    className="expand-arrow"
+                    onClick={toggleClubsExpansion}
+                    type="button"
+                  >
+                    {isClubsExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                  </button>
+                </div>
+                
+                {isClubsExpanded && (
+                  <div className="sub-options">
+                    <label className="checkbox-item sub-item">
+                      <input
+                        type="checkbox"
+                        checked={clubTypes.nightClub}
+                        onChange={() => handleClubTypeChange('nightClub')}
+                      />
+                      <span className="checkmark"></span>
+                      Night Club
+                    </label>
+                    <label className="checkbox-item sub-item">
+                      <input
+                        type="checkbox"
+                        checked={clubTypes.dayBeachClub}
+                        onChange={() => handleClubTypeChange('dayBeachClub')}
+                      />
+                      <span className="checkmark"></span>
+                      Day/Beach Club
+                    </label>
+                  </div>
+                )}
+
                 <label className="checkbox-item">
                   <input
                     type="checkbox"
@@ -62,52 +131,12 @@ const ClubsMapPage = () => {
                   <span className="checkmark"></span>
                   Lounges
                 </label>
-              </div>
-            </div>
-
-            {selectedTypes.clubs && (
-              <div className="filter-section">
-                <h3>Club Types</h3>
-                <div className="checkbox-group">
-                  <label className="checkbox-item">
-                    <input
-                      type="checkbox"
-                      checked={clubTypes.dayClub}
-                      onChange={() => handleClubTypeChange('dayClub')}
-                    />
-                    <span className="checkmark"></span>
-                    Day Club
-                  </label>
-                  <label className="checkbox-item">
-                    <input
-                      type="checkbox"
-                      checked={clubTypes.nightClub}
-                      onChange={() => handleClubTypeChange('nightClub')}
-                    />
-                    <span className="checkmark"></span>
-                    Night Club
-                  </label>
-                  <label className="checkbox-item">
-                    <input
-                      type="checkbox"
-                      checked={clubTypes.beachClub}
-                      onChange={() => handleClubTypeChange('beachClub')}
-                    />
-                    <span className="checkmark"></span>
-                    Beach Club
-                  </label>
-                </div>
-              </div>
-            )}
-
-            <div className="filter-section">
-              <h3>Additional Options</h3>
-              <div className="checkbox-group">
+                
                 <label className="checkbox-item">
                   <input
                     type="checkbox"
-                    checked={showBars}
-                    onChange={() => setShowBars(!showBars)}
+                    checked={selectedTypes.bars}
+                    onChange={() => handleTypeChange('bars')}
                   />
                   <span className="checkmark"></span>
                   Bars
