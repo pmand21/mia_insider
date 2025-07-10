@@ -37,7 +37,7 @@ function App() {
         <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/clubbing" element={<ClubbingHomePage />} />
         <Route path="/events" element={<EventsPage />} />
-        <Route path="/dining" element={<DiningPage />} />
+        <Route path="/dining" element={<DiningHomePage />} />
         <Route path="/dining-home" element={<DiningHomePage />} />
         <Route path="/restaurants-map" element={<RestaurantsMapPage />} />
         <Route path="/fine-dining" element={<FineDiningPage />} />
