@@ -163,7 +163,7 @@ const ClubbingHomePage = () => {
           <div className="cta-content">
             <h2>Ready for VIP Treatment?</h2>
             <p>Skip the lines, get the best tables, and experience Miami nightlife like never before</p>
-            <Link to="/vip" className="cta-button">VIP</Link>
+            <Link to="/vip" className="cta-button">Get VIP Access</Link>
           </div>
         </div>
       </div>
