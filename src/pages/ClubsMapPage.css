@@ -1,74 +1,77 @@
 .clubs-map-page {
   min-height: 100vh;
-  background: #f8f9fa;
-}
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
+  padding-top: 100px;
+  background: #0a0a0a;
 }
 
 .page-header {
-  padding: 60px 0 40px;
   text-align: center;
-  background: white;
-  margin-bottom: 0;
+  margin-bottom: 3rem;
 }
 
 .page-title {
   font-size: 3rem;
   font-weight: 700;
-  color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .page-subtitle {
   font-size: 1.2rem;
-  color: #666;
+  color: #cccccc;
   max-width: 600px;
   margin: 0 auto;
 }
 
 .map-container {
-  display: flex;
-  min-height: 80vh;
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  height: 70vh;
+  margin-bottom: 4rem;
 }
 
 .map-sidebar {
-  width: 300px;
-  background: #f8f9fa;
-  padding: 30px;
-  border-right: 1px solid #e9ecef;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  height: fit-content;
 }
 
 .filter-section {
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
 .filter-section h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
+  color: #ff6b35;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .checkbox-group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .checkbox-item {
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: #cccccc;
   font-size: 0.95rem;
-  color: #555;
+  transition: color 0.3s ease;
+}
+
+.checkbox-item:hover {
+  color: #ffffff;
 }
 
 .checkbox-item input[type="checkbox"] {
@@ -78,74 +81,71 @@
 .checkmark {
   width: 18px;
   height: 18px;
-  border: 2px solid #ddd;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-  margin-right: 10px;
+  margin-right: 0.75rem;
   position: relative;
   transition: all 0.3s ease;
 }
 
 .checkbox-item input[type="checkbox"]:checked + .checkmark {
-  background: #667eea;
-  border-color: #667eea;
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
+  border-color: #ff6b35;
 }
 
 .checkbox-item input[type="checkbox"]:checked + .checkmark::after {
   content: '✓';
   position: absolute;
-  top: -2px;
-  left: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
   font-size: 12px;
   font-weight: bold;
 }
 
 .map-legend {
-  margin-top: 40px;
-}
-
-.map-legend h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
 }
 
 .legend-items {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.75rem;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+  color: #cccccc;
   font-size: 0.9rem;
-  color: #555;
 }
 
 .legend-marker {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  margin-right: 10px;
 }
 
 .legend-marker.club {
-  background: #667eea;
+  background: #ff6b35;
 }
 
 .legend-marker.lounge {
-  background: #764ba2;
+  background: #f7931e;
 }
 
 .legend-marker.bar {
-  background: #f093fb;
+  background: #4ade80;
 }
 
 .map-area {
-  flex: 1;
-  position: relative;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
 }
 
 .map-placeholder {
@@ -153,36 +153,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  padding: 3rem;
 }
 
 .map-content {
   text-align: center;
   max-width: 500px;
-  padding: 40px;
 }
 
 .map-content h3 {
   font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ff6b35;
 }
 
 .map-content p {
+  color: #cccccc;
+  margin-bottom: 1.5rem;
   font-size: 1.1rem;
-  margin-bottom: 25px;
-  opacity: 0.9;
 }
 
 .map-content ul {
   text-align: left;
-  margin-bottom: 40px;
+  color: #cccccc;
+  margin-bottom: 2rem;
+  list-style: none;
+  padding: 0;
 }
 
 .map-content li {
-  margin-bottom: 8px;
-  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.map-content li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #ff6b35;
+  font-weight: bold;
 }
 
 .map-preview {
@@ -190,26 +201,25 @@
   width: 300px;
   height: 200px;
   margin: 0 auto;
-  background: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.05));
+  border-radius: 12px;
+  border: 2px dashed rgba(255, 107, 53, 0.3);
 }
 
 .miami-outline {
   position: relative;
   width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
 }
 
 .venue-dot {
   position: absolute;
   width: 12px;
   height: 12px;
-  background: #fff;
+  background: #ff6b35;
   border-radius: 50%;
   animation: pulse 2s infinite;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
 }
 
 @keyframes pulse {
@@ -227,42 +237,26 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  .clubs-map-page {
+    padding-top: 80px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
   .map-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    height: auto;
   }
   
   .map-sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #e9ecef;
+    order: 2;
   }
   
   .map-area {
-    min-height: 400px;
-  }
-}
-
-@media (max-width: 768px) {
-  .page-title {
-    font-size: 2.5rem;
-  }
-  
-  .map-sidebar {
-    padding: 20px;
-  }
-  
-  .map-content {
-    padding: 20px;
-  }
-  
-  .map-content h3 {
-    font-size: 1.5rem;
-  }
-  
-  .map-preview {
-    width: 250px;
-    height: 150px;
+    order: 1;
+    height: 50vh;
   }
 }
