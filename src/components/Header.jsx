@@ -6,7 +6,8 @@ import './Header.css';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isClubDropdownOpen, setIsClubDropdownOpen] = useState(false);
+  const [isDiningDropdownOpen, setIsDiningDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,13 +29,13 @@ const Header = () => {
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
             <div 
               className="nav-dropdown"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
+              onMouseEnter={() => setIsClubDropdownOpen(true)}
+              onMouseLeave={() => setIsClubDropdownOpen(false)}
             >
               <Link to="/clubbing" className="nav-link-with-dropdown">
                 Clubbing <ChevronDown size={16} />
               </Link>
-              <div className={`dropdown-menu ${isDropdownOpen ? 'dropdown-open' : ''}`}>
+              <div className={`dropdown-menu ${isClubDropdownOpen ? 'dropdown-open' : ''}`}>
                 <div className="dropdown-section">
                   <Link to="/clubbing-home" className="dropdown-item">
                     <span className="dropdown-icon">🏠</span>
@@ -70,7 +71,50 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <Link to="/events">Events</Link>
+            <div 
+              className="nav-dropdown"
+              onMouseEnter={() => setIsDiningDropdownOpen(true)}
+              onMouseLeave={() => setIsDiningDropdownOpen(false)}
+            >
+              <Link to="/dining-home" className="nav-link-with-dropdown">
+                Dining <ChevronDown size={16} />
+              </Link>
+              <div className={`dropdown-menu ${isDiningDropdownOpen ? 'dropdown-open' : ''}`}>
+                <div className="dropdown-section">
+                  <Link to="/dining-home" className="dropdown-item">
+                    <span className="dropdown-icon">🏠</span>
+                    Dining Home
+                  </Link>
+                  <Link to="/restaurants-map" className="dropdown-item">
+                    <span className="dropdown-icon">🗺️</span>
+                    Restaurants on Map
+                  </Link>
+                </div>
+                <div className="dropdown-divider"></div>
+                <div className="dropdown-section">
+                  <Link to="/fine-dining" className="dropdown-item">
+                    <span className="dropdown-icon">⭐</span>
+                    Fine Dining
+                  </Link>
+                  <Link to="/rooftop-dining" className="dropdown-item">
+                    <span className="dropdown-icon">🌆</span>
+                    Rooftop Dining
+                  </Link>
+                  <Link to="/waterfront-dining" className="dropdown-item">
+                    <span className="dropdown-icon">🌊</span>
+                    Waterfront Dining
+                  </Link>
+                  <Link to="/steakhouses" className="dropdown-item">
+                    <span className="dropdown-icon">🥩</span>
+                    Steakhouses
+                  </Link>
+                  <Link to="/sushi-seafood" className="dropdown-item">
+                    <span className="dropdown-icon">🍣</span>
+                    Sushi & Seafood
+                  </Link>
+                </div>
+              </div>
+            </div>
             <Link to="/dining">Dining</Link>
             <Link to="/hotels">Hotels</Link>
             <Link to="/experiences">Experiences</Link>
