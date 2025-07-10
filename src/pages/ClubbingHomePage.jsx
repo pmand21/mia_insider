@@ -51,7 +51,7 @@ const ClubbingHomePage = () => {
             </p>
             <div className="hero-stats">
               <div className="stat">
-                <span className="stat-number">7+</span>
+                <span className="stat-number">10</span>
                 <span className="stat-label">Premium Venues</span>
               </div>
               <div className="stat">
